@@ -19,6 +19,7 @@ def do_download(directory, url):
             'home': directory,
             'temp': tempdir
         },
+        'outtmpl': {'default': '%(upload_date>%Y-%m-%d)s - %(title)s'},
         'postprocessors': [{'key': 'FFmpegConcat',
                             'only_multi_video': True,
                             'when': 'playlist'}],
