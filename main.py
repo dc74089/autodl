@@ -23,7 +23,7 @@ def do_download(directory, url):
                             'only_multi_video': True,
                             'when': 'playlist'}],
         'retries': 10,
-        'simulate': True
+        'simulate': False
     }
 
     with YoutubeDL(opts) as ydl:
