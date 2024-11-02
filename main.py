@@ -45,14 +45,17 @@ def main():
     d = list(dirs)
     random.shuffle(d)
         for dir_name in d:
-            sub_dir_path = os.path.join(root, dir_name)
-            urls_file_path = os.path.join(sub_dir_path, 'urls.txt')
+            try:
+                sub_dir_path = os.path.join(root, dir_name)
+                urls_file_path = os.path.join(sub_dir_path, 'urls.txt')
 
-            # Check if 'urls.txt' exists in this subdirectory
-            if os.path.isfile(urls_file_path):
-                with open(urls_file_path, 'r') as file:
-                    for line in file:
-                        do_download(sub_dir_path, line)
+                # Check if 'urls.txt' exists in this subdirectory
+                if os.path.isfile(urls_file_path):
+                    with open(urls_file_path, 'r') as file:
+                        for line in file:
+                            do_download(sub_dir_path, line)
+            except:
+                pass
 
 
 if __name__ == '__main__':
