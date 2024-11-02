@@ -1,5 +1,6 @@
 import argparse
 import os
+import random
 
 from yt_dlp import YoutubeDL
 
@@ -41,7 +42,9 @@ def main():
 
     # Iterate over all subdirectories in the current directory
     for root, dirs, files in os.walk(root_dir):
-        for dir_name in dirs:
+    d = list(dirs)
+    random.shuffle(d)
+        for dir_name in d:
             sub_dir_path = os.path.join(root, dir_name)
             urls_file_path = os.path.join(sub_dir_path, 'urls.txt')
 
