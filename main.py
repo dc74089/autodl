@@ -42,8 +42,9 @@ def main():
 
     # Iterate over all subdirectories in the current directory
     for root, dirs, files in os.walk(root_dir):
-    d = list(dirs)
-    random.shuffle(d)
+        d = list(dirs)
+        random.shuffle(d)
+
         for dir_name in d:
             try:
                 sub_dir_path = os.path.join(root, dir_name)
